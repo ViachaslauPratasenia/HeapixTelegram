@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="HTML" injector-id="xml">
+      <display-name>intent-filter</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("intent-filter"))]]></place>
+    </injection>
+    <injection language="TEXT" injector-id="xml">
+      <display-name>intent-filter</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("intent-filter"))]]></place>
+    </injection>
+    <injection language="ModuleMap" injector-id="xml">
+      <display-name>intent-filter</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("intent-filter"))]]></place>
+    </injection>
+    <injection language="file-reference" injector-id="xml">
+      <display-name>intent-filter</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("intent-filter"))]]></place>
+    </injection>
+    <injection language="yaml" injector-id="xml">
+      <display-name>intent-filter</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("intent-filter"))]]></place>
+    </injection>
+  </component>
+</project>
