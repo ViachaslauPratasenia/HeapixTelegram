@@ -5,7 +5,9 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
+import android.view.ContextMenu
 import android.view.Menu
+import android.view.View
 import by.heapix.proslau.heapixtelegram.View.fragments.ChatFragment
 import by.heapix.proslau.heapixtelegram.View.fragments.GroupFragment
 import by.heapix.proslau.heapixtelegram.View.fragments.MapFragment
@@ -61,6 +63,8 @@ class MainActivity : AppCompatActivity() {
         fragmentManager.beginTransaction().add(R.id.main_container, groupFragment).hide(groupFragment).commit()
         fragmentManager.beginTransaction().add(R.id.main_container, settingsFragment).hide(settingsFragment).commit()
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         getMenuInflater().inflate(R.menu.menu_toolbar, menu)

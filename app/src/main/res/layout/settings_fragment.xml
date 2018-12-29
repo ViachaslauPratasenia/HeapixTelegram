@@ -28,7 +28,8 @@
 					android:layout_height="?attr/actionBarSize"
 					android:layout_width="match_parent"
 					app:layout_collapseMode="pin"
-					app:popupTheme="@style/AppTheme.PopupOverlay" app:layout_collapseParallaxMultiplier="0.9"/>
+					app:popupTheme="@style/AppTheme.PopupOverlay"
+					app:layout_collapseParallaxMultiplier="0.9"/>
 
 		</android.support.design.widget.CollapsingToolbarLayout>
 	</android.support.design.widget.AppBarLayout>
@@ -43,6 +44,6 @@
 			app:layout_anchor="@id/app_bar"
 			app:layout_anchorGravity="bottom|end"
 			app:srcCompat="@android:drawable/ic_menu_camera"
-			app:backgroundTint="@color/colorAccent"/>
+			app:backgroundTint="@android:color/background_light"/>
 
 </android.support.design.widget.CoordinatorLayout>
