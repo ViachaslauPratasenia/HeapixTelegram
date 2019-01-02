@@ -21,11 +21,10 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="8dp"
 			android:layout_marginBottom="8dp">
-		<EditText android:id="@+id/inputEmail"
+		<EditText android:id="@+id/inputNickname"
 				  android:layout_width="match_parent"
 				  android:layout_height="wrap_content"
-				  android:inputType="textEmailAddress"
-				  android:hint="Email"/>
+				  android:hint="Nickname" android:inputType="text"/>
 	</android.support.design.widget.TextInputLayout>
 
 	<android.support.design.widget.TextInputLayout

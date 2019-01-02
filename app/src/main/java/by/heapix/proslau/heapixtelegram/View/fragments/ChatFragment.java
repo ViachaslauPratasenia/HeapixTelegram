@@ -1,4 +1,4 @@
-package by.heapix.proslau.heapixtelegram.View.fragments;
+package by.heapix.proslau.heapixtelegram.view.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,7 +12,6 @@ import android.widget.*;
 import by.heapix.proslau.heapixtelegram.R;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 
 public class ChatFragment extends Fragment {

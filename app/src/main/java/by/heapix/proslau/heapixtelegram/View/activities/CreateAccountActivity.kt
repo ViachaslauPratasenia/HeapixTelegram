@@ -1,4 +1,4 @@
-package by.heapix.proslau.heapixtelegram.View.activities
+package by.heapix.proslau.heapixtelegram.view.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -14,9 +14,9 @@ class CreateAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
         btnCreateAccount.setOnClickListener {
-            if(inputEmail.text.isEmpty() || inputPhone.text.isEmpty() || inputPassword.text.isEmpty()){
+            if(inputNickname.text.isEmpty() || inputPhone.text.isEmpty() || inputPassword.text.isEmpty()){
                 Toast.makeText(applicationContext, "Please input all fields", Toast.LENGTH_SHORT).show()
-            } else if(inputPassword.text.equals(inputConfirmPassword.text)){
+            } else if(!inputPassword.text.equals(inputConfirmPassword.text)){
                 Toast.makeText(applicationContext, "Passwords must match", Toast.LENGTH_SHORT).show()
             } else{
                 val intent = Intent(applicationContext, MainActivity::class.java)

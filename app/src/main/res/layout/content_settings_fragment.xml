@@ -7,12 +7,14 @@
 		tools:showIn="@layout/settings_fragment"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		tools:context=".View.fragments.TempSettingFragment">
+		tools:context=".view.fragments.TempSettingFragment">
 
-	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_margin="@dimen/text_margin"
-			android:text="@string/large_text"/>
-
+	<android.support.v7.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:text="@string/large_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/textView"/>
+	</android.support.v7.widget.CardView>
 </android.support.v4.widget.NestedScrollView>

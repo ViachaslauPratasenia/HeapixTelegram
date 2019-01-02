@@ -24,7 +24,7 @@
 			android:theme="@style/AppTheme"
 			tools:ignore="GoogleAppIndexingWarning">
         <activity
-				android:name=".View.activities.LoginActivity"
+				android:name=".view.activities.LoginActivity"
 				android:noHistory="true">
 			<intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -40,7 +40,11 @@
 				android:name="com.google.android.geo.API_KEY"
 				android:value="@string/google_maps_key"/>
 
-        <activity android:name=".View.activities.CreateAccountActivity">
+        <activity android:name=".view.activities.CreateAccountActivity">
+		</activity>
+        <activity
+				android:name=".view.activities.SettingsActivity"
+				android:label="@string/title_activity_settings">
 		</activity>
     </application>
 

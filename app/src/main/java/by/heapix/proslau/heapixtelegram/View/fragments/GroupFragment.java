@@ -1,4 +1,4 @@
-package by.heapix.proslau.heapixtelegram.View.fragments;
+package by.heapix.proslau.heapixtelegram.view.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
