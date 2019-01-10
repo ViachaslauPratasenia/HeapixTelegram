@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import org.jetbrains.anko.db.*
 
-class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "testDB1", null, 1) {
+class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "testDB", null, 1) {
 
     companion object {
         private var instance: DBHelperAnko? = null
@@ -22,10 +22,10 @@ class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "testDB
     override fun onCreate(database: SQLiteDatabase) {
 
         database.createTable("users", true,
-            "id" to INTEGER + PRIMARY_KEY + UNIQUE,
-            "title" to TEXT + NOT_NULL,
-            "content" to TEXT,
-            "creationDate" to TEXT)
+            "id" to INTEGER + PRIMARY_KEY,
+            "phone" to TEXT + NOT_NULL,
+            "nickname" to TEXT,
+            "password" to TEXT)
 
     }
 
@@ -35,3 +35,6 @@ class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "testDB
 
     }
 }
+
+val Context.database: DBHelperAnko
+    get() = DBHelperAnko.getInstance(getApplicationContext())

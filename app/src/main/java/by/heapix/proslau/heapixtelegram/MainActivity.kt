@@ -1,5 +1,6 @@
 package by.heapix.proslau.heapixtelegram
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -12,9 +13,11 @@ import by.heapix.proslau.heapixtelegram.view.fragments.MapFragment
 import by.heapix.proslau.heapixtelegram.view.fragments.TempSettingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.chat_fragment.*
+import org.jetbrains.anko.bundleOf
 
 class MainActivity : AppCompatActivity() {
 
+    var nickname = ""
     val chatFragment = ChatFragment()
     val groupFragment = GroupFragment()
     val mapFragment = MapFragment()
@@ -51,8 +54,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        setSupportActionBar(toolbar)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 

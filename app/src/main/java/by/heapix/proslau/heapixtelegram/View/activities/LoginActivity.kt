@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import by.heapix.proslau.heapixtelegram.MainActivity
 import by.heapix.proslau.heapixtelegram.R
+import by.heapix.proslau.heapixtelegram.model.user.User
+import by.heapix.proslau.heapixtelegram.model.user.UserRepository
 import kotlinx.android.synthetic.main.login.*
 
 class LoginActivity : Activity() {
@@ -13,14 +15,16 @@ class LoginActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
         btnLogin.setOnClickListener {
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(applicationContext, inputNickname.text, Toast.LENGTH_SHORT).show()
+            if (UserRepository(this).isUserValid(inputNickname.text.toString(), inputPassword.text.toString())){
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "The username or password you entered is incorrect", Toast.LENGTH_LONG).show()
+            }
         }
         btnCreateNewAccount.setOnClickListener {
             val intent = Intent(applicationContext, CreateAccountActivity::class.java)
             startActivity(intent)
         }
     }
-
 }
