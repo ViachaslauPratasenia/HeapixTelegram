@@ -26,7 +26,10 @@ public class TempSettingFragment extends Fragment {
 
 
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle("Settings");
+        //actionBar.setTitle("Settings");
+
+        Bundle args = getArguments();
+        actionBar.setTitle(args.getString("nick"));
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

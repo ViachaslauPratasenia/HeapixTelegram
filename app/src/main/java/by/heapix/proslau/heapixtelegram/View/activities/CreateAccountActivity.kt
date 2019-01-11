@@ -26,6 +26,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 UserRepository(this).create(newUser)
                 Toast.makeText(this, "User is created", Toast.LENGTH_SHORT).show()
                 val intent = Intent(applicationContext, MainActivity::class.java)
+                intent.putExtra("nickname", inputNickname.text.toString())
                 startActivity(intent)
             }
         }

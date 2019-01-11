@@ -1,6 +1,5 @@
 package by.heapix.proslau.heapixtelegram
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -8,18 +7,16 @@ import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import by.heapix.proslau.heapixtelegram.view.fragments.ChatFragment
-import by.heapix.proslau.heapixtelegram.view.fragments.GroupFragment
+import by.heapix.proslau.heapixtelegram.view.fragments.ContactFragment
 import by.heapix.proslau.heapixtelegram.view.fragments.MapFragment
 import by.heapix.proslau.heapixtelegram.view.fragments.TempSettingFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.chat_fragment.*
-import org.jetbrains.anko.bundleOf
 
 class MainActivity : AppCompatActivity() {
 
-    var nickname = ""
+    lateinit var nickname : String
     val chatFragment = ChatFragment()
-    val groupFragment = GroupFragment()
+    val contactFragment = ContactFragment()
     val mapFragment = MapFragment()
     val settingsFragment = TempSettingFragment()
     val fragmentManager : FragmentManager = supportFragmentManager
@@ -33,8 +30,8 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_groups -> {
-                fragmentManager.beginTransaction().hide(activeFragment).show(groupFragment).commit()
-                activeFragment = groupFragment
+                fragmentManager.beginTransaction().hide(activeFragment).show(contactFragment).commit()
+                activeFragment = contactFragment
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_chat -> {
@@ -57,9 +54,15 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+        nickname = intent.getStringExtra("nickname")
+        val args = Bundle()
+        args.putString("nick", nickname)
+        settingsFragment.arguments = args
+
+
         fragmentManager.beginTransaction().add(R.id.main_container, mapFragment).commit()
         fragmentManager.beginTransaction().add(R.id.main_container, chatFragment).hide(chatFragment).commit()
-        fragmentManager.beginTransaction().add(R.id.main_container, groupFragment).hide(groupFragment).commit()
+        fragmentManager.beginTransaction().add(R.id.main_container, contactFragment).hide(contactFragment).commit()
         fragmentManager.beginTransaction().add(R.id.main_container, settingsFragment).hide(settingsFragment).commit()
     }
 

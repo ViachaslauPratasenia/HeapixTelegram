@@ -17,6 +17,7 @@ class LoginActivity : Activity() {
         btnLogin.setOnClickListener {
             if (UserRepository(this).isUserValid(inputNickname.text.toString(), inputPassword.text.toString())){
                 val intent = Intent(applicationContext, MainActivity::class.java)
+                intent.putExtra("nickname", inputNickname.text.toString())
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "The username or password you entered is incorrect", Toast.LENGTH_LONG).show()
