@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import by.heapix.proslau.heapixtelegram.R;
+import by.heapix.proslau.heapixtelegram.model.ChatListItem;
 import com.bumptech.glide.Glide;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -17,23 +18,13 @@ import java.util.ArrayList;
 
 public class ChatListRecyclerViewAdapter  extends RecyclerView.Adapter<ChatListRecyclerViewAdapter.ViewHolder>{
 
-    private ArrayList<String> chatListNicknames = new ArrayList<>();
-    private ArrayList<String> chatListImages = new ArrayList<>();
-    private ArrayList<String> chatListLastMessages = new ArrayList<>();
-    private ArrayList<String> chatListDates = new ArrayList<>();
+    private ArrayList<ChatListItem> chatListItems = new ArrayList<>();
     private Context context;
 
-    public ChatListRecyclerViewAdapter(ArrayList<String> chatListNicknames, ArrayList<String> chatListImages,
-                                       ArrayList<String> chatListLastMessages, ArrayList<String> chatListDates,
-                                       Context context) {
-        this.chatListNicknames = chatListNicknames;
-        this.chatListImages = chatListImages;
-        this.chatListLastMessages = chatListLastMessages;
-        this.chatListDates = chatListDates;
+    public ChatListRecyclerViewAdapter(ArrayList<ChatListItem> chatListItems, Context context) {
+        this.chatListItems = chatListItems;
         this.context = context;
     }
-
-
 
     @NonNull
     @Override
@@ -45,24 +36,31 @@ public class ChatListRecyclerViewAdapter  extends RecyclerView.Adapter<ChatListR
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+        final ChatListItem currentItem = chatListItems.get(i);
         Glide.with(context)
                 .asBitmap()
-                .load(chatListImages.get(i))
+                .load(currentItem.getImage())
                 .into(viewHolder.chatListImageView);
-        viewHolder.chatListName.setText(chatListNicknames.get(i));
-        viewHolder.chatListLastMessage.setText(chatListLastMessages.get(i));
-        viewHolder.chatListDate.setText(chatListDates.get(i));
+        viewHolder.chatListName.setText(currentItem.getName());
+        viewHolder.chatListLastMessage.setText(currentItem.getLastMessage());
+        viewHolder.chatListDate.setText(currentItem.getDate());
         viewHolder.chatListRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, chatListNicknames.get(i), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, currentItem.getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    public void updateList(ArrayList<ChatListItem> newList){
+        chatListItems = new ArrayList<>();
+        chatListItems.addAll(newList);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
-        return chatListNicknames.size();
+        return chatListItems.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

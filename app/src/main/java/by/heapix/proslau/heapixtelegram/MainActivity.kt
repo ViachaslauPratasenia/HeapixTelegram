@@ -59,17 +59,9 @@ class MainActivity : AppCompatActivity() {
         args.putString("nick", nickname)
         settingsFragment.arguments = args
 
-
         fragmentManager.beginTransaction().add(R.id.main_container, mapFragment).commit()
         fragmentManager.beginTransaction().add(R.id.main_container, chatFragment).hide(chatFragment).commit()
         fragmentManager.beginTransaction().add(R.id.main_container, contactFragment).hide(contactFragment).commit()
         fragmentManager.beginTransaction().add(R.id.main_container, settingsFragment).hide(settingsFragment).commit()
-    }
-
-
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu)
-        return super.onCreateOptionsMenu(menu)
     }
 }

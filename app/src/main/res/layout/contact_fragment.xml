@@ -8,16 +8,12 @@
 
 
 	<android.support.v7.widget.Toolbar
+			android:id="@+id/contact_toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="?attr/colorPrimary"
-			android:theme="@style/AppTheme.PopupOverlay"
 			android:minHeight="?attr/actionBarSize"
-			android:id="@+id/group_toolbar"/>
-	<SearchView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/chat_search"/>
+			app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
 	<android.support.v7.widget.RecyclerView
 			android:layout_width="match_parent"

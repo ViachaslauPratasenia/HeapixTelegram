@@ -1,20 +1,29 @@
 package by.heapix.proslau.heapixtelegram.view.fragments;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
+import android.widget.Button;
 import android.widget.Toast;
 import by.heapix.proslau.heapixtelegram.R;
 
-public class TempSettingFragment extends Fragment {
+import java.util.Objects;
+
+public class TempSettingFragment extends Fragment implements View.OnClickListener {
+
+    private Dialog cameraDialog;
+
+    Button btnFromCamera;
 
     @Nullable
     @Override
@@ -24,6 +33,9 @@ public class TempSettingFragment extends Fragment {
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
+        cameraDialog = new Dialog(getContext());
+        cameraDialog.setContentView(R.layout.choise_camera_dialog);
+        cameraDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         //actionBar.setTitle("Settings");
@@ -32,12 +44,22 @@ public class TempSettingFragment extends Fragment {
         actionBar.setTitle(args.getString("nick"));
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Floating button", Toast.LENGTH_SHORT).show();
-            }
-        });
+        fab.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fab:
+                Toast.makeText(getContext(), "Floating button (settings)", Toast.LENGTH_SHORT).show();
+                try {
+                    cameraDialog.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+        }
     }
 }
