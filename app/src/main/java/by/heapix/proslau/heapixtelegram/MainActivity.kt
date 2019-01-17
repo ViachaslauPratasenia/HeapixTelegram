@@ -5,11 +5,10 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import by.heapix.proslau.heapixtelegram.view.fragments.ChatFragment
 import by.heapix.proslau.heapixtelegram.view.fragments.ContactFragment
 import by.heapix.proslau.heapixtelegram.view.fragments.MapFragment
-import by.heapix.proslau.heapixtelegram.view.fragments.TempSettingFragment
+import by.heapix.proslau.heapixtelegram.view.fragments.SettingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     val chatFragment = ChatFragment()
     val contactFragment = ContactFragment()
     val mapFragment = MapFragment()
-    val settingsFragment = TempSettingFragment()
+    val settingsFragment = SettingFragment()
     val fragmentManager : FragmentManager = supportFragmentManager
     var activeFragment : Fragment = mapFragment
 

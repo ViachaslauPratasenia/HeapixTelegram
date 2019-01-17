@@ -113,6 +113,27 @@
 		"when a user tries to pick up one of cards.\n\n"
 	</string>
 
+
+
+	<string name="setting_phone_number_subtitle">Tap to change phone number</string>
+	<string name="settings_username_subtitle">Username</string>
+	<string name="settings_bio_subtitle">Bio</string>
+	<string name="settings_notification_sound_str">Notifications and Sounds</string>
+	<string name="settings_privacy_security_str">Privacy and Security</string>
+	<string name="settings_data_storage_str">Data and storage</string>
+	<string name="settings_chat_setting_str">Chat settings</string>
+	<string name="settings_language_str">Language</string>
+	<string name="settings_help_str">Help</string>
+	<string name="settings_about_str">Telegram app by Heapix for Android v7.0</string>
+
+
+
+
+
+
+
+
+
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
 	<string name="title_activity_settings">Settings</string>
