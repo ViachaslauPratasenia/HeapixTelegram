@@ -22,7 +22,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Passwords must match", Toast.LENGTH_SHORT).show()
             } else {
                 val newUser = User(User.counter++, inputPhone.text.toString(),
-                    inputNickname.text.toString(), inputPassword.text.toString())
+                    inputNickname.text.toString(), inputName.text.toString(), "", inputPassword.text.toString())
                 UserRepository(this).create(newUser)
                 Toast.makeText(this, "User is created", Toast.LENGTH_SHORT).show()
                 val intent = Intent(applicationContext, MainActivity::class.java)

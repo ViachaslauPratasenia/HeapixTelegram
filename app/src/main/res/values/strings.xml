@@ -114,7 +114,6 @@
 	</string>
 
 
-
 	<string name="setting_phone_number_subtitle">Tap to change phone number</string>
 	<string name="settings_username_subtitle">Username</string>
 	<string name="settings_bio_subtitle">Bio</string>
@@ -126,12 +125,16 @@
 	<string name="settings_help_str">Help</string>
 	<string name="settings_about_str">Telegram app by Heapix for Android v7.0</string>
 
+	<string name="settings_bio_about">You can add a few lines about yourself. Anyone who opens your profile will
+	see this text</string>
 
+	<string name="settings_username_about">
+		You can choose a username on Telegram. If you do, other people will be able to find you by this username and
+		contact you without knowing your phone number.You can use a-z, 0-9 and unserscores. Mininum length is 5
+		characters</string>
 
-
-
-
-
+	<string name="settings_phone_about">You can change your Telegram number here. Your account and all your
+		cloud data - messages, media, contacts, etc. will be moved to the new number.</string>
 
 
 	<!-- TODO: Remove or change this placeholder text -->
@@ -196,7 +199,7 @@
 		<item>3</item>
 	</string-array>
 
-	<string-array name="multi_select_list_preference_default_value"/>
+	<string-array name="multi_select_list_preference_default_value" />
 
 	<string name="pref_title_system_sync_settings">System sync settings</string>
 

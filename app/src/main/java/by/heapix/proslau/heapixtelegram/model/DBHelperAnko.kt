@@ -6,7 +6,7 @@ import by.heapix.proslau.heapixtelegram.model.contact.Contact
 import by.heapix.proslau.heapixtelegram.model.contact.ContactRepository
 import org.jetbrains.anko.db.*
 
-class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "2", null, 1) {
+class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "4", null, 1) {
 
     companion object {
         private var instance: DBHelperAnko? = null
@@ -26,7 +26,9 @@ class DBHelperAnko (context: Context) : ManagedSQLiteOpenHelper(context, "2", nu
         database.createTable("users", true,
             "id" to INTEGER + PRIMARY_KEY + UNIQUE,
             "phone" to TEXT + NOT_NULL,
-            "nickname" to TEXT + NOT_NULL,
+            "username" to TEXT + NOT_NULL,
+            "name" to TEXT + NOT_NULL,
+            "bio" to TEXT,
             "password" to TEXT)
 
         database.createTable("contacts", true,
